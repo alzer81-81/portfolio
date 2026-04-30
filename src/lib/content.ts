@@ -34,7 +34,7 @@ export const timeline = [
     company: "Teaching.com",
     role: "Senior Product Designer",
     body:
-      "Designing scalable, user-centred tools for educators and helping shape the product experience across remote teams.",
+      "Designed scalable, user-centred tools for educators and helped shape the product experience across remote teams.",
   },
   {
     dates: "Feb 2019 - Nov 2023",
@@ -125,7 +125,7 @@ export const aboutTimeline = [
     company: "Teaching.com",
     role: "Senior Product Designer",
     body:
-      "We’re changing online education by building exciting products that equip students and teachers with the tools to succeed in the classroom and beyond.",
+      "I worked on products that supported online education, helping equip students and teachers with tools designed to make learning and teaching more effective in the classroom and beyond.",
     image: "/about/teaching.webp",
     alt: "Typing.com product interface shown on a tablet-like layout.",
   },

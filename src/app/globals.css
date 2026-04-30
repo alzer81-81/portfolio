@@ -3065,7 +3065,8 @@ img {
   .project-feature__content {
     grid-template-columns: 1fr;
     gap: 40px;
-    padding-top: 40px;
+    padding-top: 72px;
+    padding-bottom: 64px;
   }
 
   .project-feature__meta {
@@ -3073,7 +3074,7 @@ img {
   }
 
   .project-feature__visuals {
-    padding-bottom: 40px;
+    padding-bottom: 72px;
   }
 
   .project-carousel__track {

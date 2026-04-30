@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { PageTransitionShell } from "@/components/page-transition-shell";
 import { PointerTrail } from "@/components/pointer-trail";
 import { StandardFooter } from "@/components/standard-footer";
+import { GoogleAnalyticsPageview } from "@/components/google-analytics";
 import { personJsonLd, siteConfig, websiteJsonLd } from "@/lib/seo";
 import "./globals.css";
 
@@ -57,6 +59,19 @@ export default function RootLayout({
   return (
     <html lang="en-IE" className="h-full">
       <body className="min-h-full flex flex-col">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-CDS8J7G1LJ"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-CDS8J7G1LJ');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -66,6 +81,7 @@ export default function RootLayout({
             }),
           }}
         />
+        <GoogleAnalyticsPageview />
         <PointerTrail />
         <PageTransitionShell>
           {children}

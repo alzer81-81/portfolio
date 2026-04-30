@@ -1546,6 +1546,15 @@ img {
   background: #81bde8;
 }
 
+.project-feature__visuals--typing .project-carousel__slide img,
+.project-feature__visuals--shortcut .project-carousel__slide img,
+.project-feature__visuals--qstream .project-carousel__slide img,
+.project-feature__visuals--privatevpn .project-carousel__slide img,
+.project-feature__visuals--runway .project-carousel__slide img {
+  transform: scale(1.06);
+  transform-origin: center center;
+}
+
 .project-feature__visuals--ryanair .project-carousel__progress-track {
   background: rgba(255, 255, 255, 0.34);
 }

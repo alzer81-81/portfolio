@@ -542,8 +542,7 @@ export default function Home() {
                 <div className="project-feature__details">
                   <p className="project-feature__label">Role Overview</p>
                   <ul>
-                    <li>UI Design</li>
-                    <li>UX Design</li>
+                    <li>Product Design</li>
                     <li>Branding</li>
                     <li>Marketing Design</li>
                     <li>Illustration</li>

@@ -1555,6 +1555,15 @@ img {
   aspect-ratio: 3 / 2;
 }
 
+.project-feature__visuals--typing .project-carousel__slide img,
+.project-feature__visuals--shortcut .project-carousel__slide img,
+.project-feature__visuals--qstream .project-carousel__slide img,
+.project-feature__visuals--privatevpn .project-carousel__slide img,
+.project-feature__visuals--runway .project-carousel__slide img,
+.project-feature__visuals--ryanair .project-carousel__slide img {
+  object-fit: contain;
+}
+
 .project-feature__visuals--ryanair .project-carousel__progress-track {
   background: rgba(255, 255, 255, 0.34);
 }
@@ -3536,6 +3545,14 @@ img {
 
   .project-carousel__slide img {
     object-position: center center;
+  }
+
+  .project-feature__visuals--typing .project-carousel__slide,
+  .project-feature__visuals--shortcut .project-carousel__slide,
+  .project-feature__visuals--qstream .project-carousel__slide,
+  .project-feature__visuals--privatevpn .project-carousel__slide,
+  .project-feature__visuals--runway .project-carousel__slide {
+    aspect-ratio: 3 / 2;
   }
 
   .project-feature__visuals--ryanair .project-carousel__slide {

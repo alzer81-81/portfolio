@@ -2,10 +2,28 @@ import { NextResponse } from "next/server";
 import { siteConfig } from "@/lib/seo";
 
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL || siteConfig.email;
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const RESEND_FROM_EMAIL =
+  process.env.RESEND_FROM_EMAIL || "Al Power Portfolio <onboarding@resend.dev>";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const escapeHtml = (value: string) =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 
 export async function POST(request: Request) {
   try {
+    if (!RESEND_API_KEY) {
+      return NextResponse.json(
+        { error: "Email sending is not configured on the server." },
+        { status: 500 },
+      );
+    }
+
     const body = await request.json();
     const name = typeof body?.name === "string" ? body.name.trim() : "";
     const email = typeof body?.email === "string" ? body.email.trim() : "";
@@ -38,32 +56,69 @@ export async function POST(request: Request) {
       );
     }
 
-    const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+    const html = `
+      <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111111;">
+        <h1 style="font-size: 24px; margin: 0 0 24px;">New portfolio contact message</h1>
+        <p style="margin: 0 0 12px;"><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p style="margin: 0 0 12px;"><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p style="margin: 0 0 12px;"><strong>Subject:</strong> ${escapeHtml(subject)}</p>
+        <hr style="border: 0; border-top: 1px solid #e5e5e5; margin: 24px 0;" />
+        <p style="margin: 0 0 8px;"><strong>Message:</strong></p>
+        <p style="margin: 0; white-space: pre-wrap;">${escapeHtml(message)}</p>
+      </div>
+    `;
+
+    const text = [
+      "New portfolio contact message",
+      "",
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Subject: ${subject}`,
+      "",
+      "Message:",
+      message,
+    ].join("\n");
+
+    const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
+        Authorization: `Bearer ${RESEND_API_KEY}`,
         "Content-Type": "application/json",
-        Accept: "application/json",
+        "User-Agent": "alpower-portfolio/1.0",
       },
       body: JSON.stringify({
-        name,
-        email,
-        subject,
-        message,
-        _subject: `Portfolio contact: ${subject}`,
-        _captcha: "false",
-        _template: "table",
+        from: RESEND_FROM_EMAIL,
+        to: [CONTACT_EMAIL],
+        reply_to: email,
+        subject: `Portfolio contact: ${subject}`,
+        html,
+        text,
       }),
       cache: "no-store",
     });
 
+    const payload = await response.json().catch(() => null);
+
     if (!response.ok) {
       return NextResponse.json(
-        { error: "The message could not be sent right now." },
+        {
+          error:
+            payload?.message ||
+            payload?.error?.message ||
+            "The message could not be sent right now.",
+        },
         { status: 502 },
       );
     }
 
-    return NextResponse.json({ ok: true });
+    if (!payload?.id) {
+      return NextResponse.json(
+        { error: "The message could not be confirmed as sent." },
+        { status: 502 },
+      );
+    }
+
+    return NextResponse.json({ ok: true, id: payload.id });
   } catch {
     return NextResponse.json(
       { error: "Something went wrong while sending." },

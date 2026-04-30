@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 type Slide = {
@@ -274,11 +273,11 @@ export function ProjectCarousel({ slides }: { slides: Slide[] }) {
             key={`${slide.src}-${index}`}
             className={`project-carousel__slide ${activeIndex === index ? "is-active" : ""}`}
           >
-            <Image
+            <img
               src={slide.src}
               alt={slide.alt}
-              fill
-              sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1100px) calc(100vw - 80px), 70vw"
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
             />
           </article>
         ))}

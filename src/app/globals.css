@@ -938,6 +938,40 @@ img {
   gap: 0;
   padding-bottom: 2px;
   flex: none;
+  position: relative;
+}
+
+.homepage-hero__avatar-link {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 16px);
+  transform: translateX(-50%) translateY(8px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+  z-index: 3;
+}
+
+.homepage-hero__avatar-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: rgba(17, 17, 17, 0.9);
+  color: #ffffff;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  box-shadow: 0 18px 40px rgba(17, 17, 17, 0.18);
 }
 
 .homepage-hero__avatar {
@@ -972,6 +1006,13 @@ img {
 
 .homepage-hero__accent:hover .homepage-hero__avatar-image--hover {
   opacity: 1;
+}
+
+.homepage-hero__accent:hover .homepage-hero__avatar-link,
+.homepage-hero__accent:focus-within .homepage-hero__avatar-link {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
 }
 
 .homepage-hero__title-line:nth-child(2) {

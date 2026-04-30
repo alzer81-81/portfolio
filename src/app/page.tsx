@@ -327,7 +327,18 @@ export default function Home() {
                 </span>
                 <span className="homepage-hero__title-line homepage-hero__title-line--with-accent">
                   <span>Brands &amp; Systems</span>
-                  <span className="homepage-hero__accent" aria-hidden="true">
+                  <span className="homepage-hero__accent">
+                    <a
+                      className="homepage-hero__avatar-link"
+                      href="https://www.linkedin.com/in/alpower81"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Powered by Al. Visit Al Power on LinkedIn."
+                    >
+                      <span className="homepage-hero__avatar-chip">
+                        Powered by Al <span aria-hidden="true">↗</span>
+                      </span>
+                    </a>
                     <span className="homepage-hero__avatar">
                       <Image
                         className="homepage-hero__avatar-image homepage-hero__avatar-image--still"

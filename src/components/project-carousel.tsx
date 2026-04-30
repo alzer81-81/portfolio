@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 type Slide = {
@@ -208,6 +209,8 @@ export function ProjectCarousel({ slides }: { slides: Slide[] }) {
   }, [cursorActive, dragging, onPointerUp]);
 
   const progressWidth = `${100 / slides.length}%`;
+  const slideSizes =
+    "(max-width: 720px) calc(100vw - 32px), (max-width: 1320px) calc(100vw - 40px), min(1500px, calc(100vw - 100px))";
 
   return (
     <div
@@ -273,11 +276,14 @@ export function ProjectCarousel({ slides }: { slides: Slide[] }) {
             key={`${slide.src}-${index}`}
             className={`project-carousel__slide ${activeIndex === index ? "is-active" : ""}`}
           >
-            <img
+            <Image
               src={slide.src}
               alt={slide.alt}
+              fill
+              sizes={slideSizes}
+              quality={82}
               loading={index === 0 ? "eager" : "lazy"}
-              decoding="async"
+              draggable={false}
             />
           </article>
         ))}

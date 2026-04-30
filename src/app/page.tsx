@@ -338,26 +338,26 @@ export default function Home() {
                       <span className="homepage-hero__avatar-chip">
                         Powered by Al <span aria-hidden="true">↗</span>
                       </span>
+                      <span className="homepage-hero__avatar">
+                        <Image
+                          className="homepage-hero__avatar-image homepage-hero__avatar-image--still"
+                          src="/avatar1.png"
+                          alt=""
+                          width={100}
+                          height={104}
+                          priority
+                        />
+                        <Image
+                          className="homepage-hero__avatar-image homepage-hero__avatar-image--hover"
+                          src="/avatar1.gif"
+                          alt=""
+                          width={100}
+                          height={104}
+                          unoptimized
+                          priority
+                        />
+                      </span>
                     </a>
-                    <span className="homepage-hero__avatar">
-                      <Image
-                        className="homepage-hero__avatar-image homepage-hero__avatar-image--still"
-                        src="/avatar1.png"
-                        alt=""
-                        width={100}
-                        height={104}
-                        priority
-                      />
-                      <Image
-                        className="homepage-hero__avatar-image homepage-hero__avatar-image--hover"
-                        src="/avatar1.gif"
-                        alt=""
-                        width={100}
-                        height={104}
-                        unoptimized
-                        priority
-                      />
-                    </span>
                   </span>
                 </span>
               </h1>

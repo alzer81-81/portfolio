@@ -1550,6 +1550,7 @@ img {
 .project-feature__visuals--shortcut .project-carousel__slide,
 .project-feature__visuals--qstream .project-carousel__slide,
 .project-feature__visuals--privatevpn .project-carousel__slide,
+.project-feature__visuals--onsecurity .project-carousel__slide,
 .project-feature__visuals--runway .project-carousel__slide {
   min-height: 0;
   aspect-ratio: 3 / 2;
@@ -1559,6 +1560,7 @@ img {
 .project-feature__visuals--shortcut .project-carousel__slide img,
 .project-feature__visuals--qstream .project-carousel__slide img,
 .project-feature__visuals--privatevpn .project-carousel__slide img,
+.project-feature__visuals--onsecurity .project-carousel__slide img,
 .project-feature__visuals--runway .project-carousel__slide img,
 .project-feature__visuals--ryanair .project-carousel__slide img {
   object-fit: contain;
@@ -1590,13 +1592,6 @@ img {
 
 .project-feature__visuals--privatevpn .project-carousel__slide {
   background: #314979;
-}
-
-.project-feature__visuals--privatevpn .project-carousel__slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
 }
 
 .project-feature__visuals--onsecurity .project-carousel__progress-track {

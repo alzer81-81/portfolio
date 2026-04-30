@@ -30,7 +30,7 @@ export const trustedBy = [
 
 export const timeline = [
   {
-    dates: "Nov 2023 - Present",
+    dates: "Nov 2023 - Apr 2026",
     company: "Teaching.com",
     role: "Senior Product Designer",
     body:
@@ -121,7 +121,7 @@ export const contactLinks = [
 
 export const aboutTimeline = [
   {
-    dates: "Nov 2023 - Present",
+    dates: "Nov 2023 - Apr 2026",
     company: "Teaching.com",
     role: "Senior Product Designer",
     body:

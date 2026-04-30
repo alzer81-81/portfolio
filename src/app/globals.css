@@ -3571,7 +3571,7 @@ img {
 
   .project-carousel__track {
     gap: 12px;
-    padding-left: 16px;
+    padding-left: 0;
   }
 
   .project-carousel__progress {

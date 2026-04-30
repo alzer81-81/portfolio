@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { PageTransitionShell } from "@/components/page-transition-shell";
@@ -81,7 +82,9 @@ export default function RootLayout({
             }),
           }}
         />
-        <GoogleAnalyticsPageview />
+        <Suspense fallback={null}>
+          <GoogleAnalyticsPageview />
+        </Suspense>
         <PointerTrail />
         <PageTransitionShell>
           {children}

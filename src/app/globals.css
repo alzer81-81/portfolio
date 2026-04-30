@@ -1555,7 +1555,6 @@ img {
 .project-feature__visuals--runway .project-carousel__slide {
   min-height: 0;
   aspect-ratio: 3 / 2;
-  --project-scrollbar-mask: 14px;
 }
 
 .project-feature__visuals--typing .project-carousel__slide img,
@@ -1722,18 +1721,6 @@ img {
   opacity: 1;
   transition:
     opacity 0.18s ease;
-}
-
-.project-carousel__slide::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: var(--project-scrollbar-mask, 0);
-  height: 100%;
-  background: inherit;
-  pointer-events: none;
-  z-index: 1;
 }
 
 .project-carousel__slide img {

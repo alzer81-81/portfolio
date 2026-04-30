@@ -3371,10 +3371,14 @@ img {
     padding: 64px 16px 72px;
   }
 
-  .homepage-hero__copy h1,
-  .homepage-projects__heading h2 {
+  .homepage-hero__copy h1 {
     font-size: clamp(3rem, 16vw, 4.4rem);
     line-height: 0.92;
+  }
+
+  .homepage-projects__heading h2 {
+    font-size: clamp(2.4rem, 12vw, 3.2rem);
+    line-height: 0.96;
   }
 
   .homepage-hero__copy p,

@@ -466,7 +466,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="project-feature__visuals">
+            <div className="project-feature__visuals project-feature__visuals--typing">
               <ProjectCarousel slides={typingSlides} />
             </div>
           </article>

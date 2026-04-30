@@ -3066,7 +3066,7 @@ img {
   .project-feature__content {
     grid-template-columns: 1fr;
     gap: 40px;
-    padding-top: 72px;
+    padding-top: 96px;
     padding-bottom: 64px;
   }
 

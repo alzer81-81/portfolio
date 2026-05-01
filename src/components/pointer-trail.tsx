@@ -201,6 +201,9 @@ export function PointerTrail() {
 
     const draw = (time: number) => {
       const squareSize = squareSizeRef.current;
+      const strokeInset = Math.max(1, squareSize * 0.08);
+      const strokeSize = Math.max(0, squareSize - strokeInset * 2);
+      const strokeWidth = Math.max(1.25, squareSize * 0.045);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       blocksRef.current.forEach((block) => {
@@ -216,9 +219,15 @@ export function PointerTrail() {
           return;
         }
 
-        ctx.globalAlpha = block.alpha;
-        ctx.fillStyle = block.color;
-        ctx.fillRect(block.x, block.y, squareSize, squareSize);
+        ctx.globalAlpha = 1;
+        ctx.strokeStyle = block.color;
+        ctx.lineWidth = strokeWidth;
+        ctx.strokeRect(
+          block.x + strokeInset,
+          block.y + strokeInset,
+          strokeSize,
+          strokeSize,
+        );
       });
 
       ctx.globalAlpha = 1;

@@ -178,6 +178,16 @@ const runwaySlides = [
   },
 ];
 
+const projectSiteLinks = {
+  typing: "https://www.typing.com",
+  shortcut: "https://www.shortcut.com",
+  ryanair: "https://www.ryanair.com",
+  qstream: "https://www.qstream.com",
+  privatevpn: "https://www.privatevpn.com",
+  onsecurity: "https://www.onsecurity.io",
+  runway: "https://www.runway.com",
+} as const;
+
 const disciplines = [
   {
     index: "01",
@@ -479,6 +489,14 @@ export default function Home() {
 
             <div className="project-feature__visuals project-feature__visuals--typing">
               <ProjectCarousel slides={typingSlides} />
+              <a
+                className="project-feature__site-link"
+                href={projectSiteLinks.typing}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visit Site
+              </a>
             </div>
           </article>
 
@@ -535,6 +553,14 @@ export default function Home() {
 
             <div className="project-feature__visuals project-feature__visuals--shortcut">
               <ProjectCarousel slides={shortcutSlides} />
+              <a
+                className="project-feature__site-link"
+                href={projectSiteLinks.shortcut}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visit Site
+              </a>
             </div>
           </article>
 
@@ -585,6 +611,14 @@ export default function Home() {
 
             <div className="project-feature__visuals project-feature__visuals--ryanair">
               <ProjectCarousel slides={ryanairSlides} />
+              <a
+                className="project-feature__site-link"
+                href={projectSiteLinks.ryanair}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visit Site
+              </a>
             </div>
           </article>
 
@@ -642,6 +676,14 @@ export default function Home() {
 
             <div className="project-feature__visuals project-feature__visuals--qstream">
               <ProjectCarousel slides={qstreamSlides} />
+              <a
+                className="project-feature__site-link"
+                href={projectSiteLinks.qstream}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visit Site
+              </a>
             </div>
           </article>
 
@@ -699,6 +741,14 @@ export default function Home() {
 
             <div className="project-feature__visuals project-feature__visuals--privatevpn">
               <ProjectCarousel slides={privatevpnSlides} />
+              <a
+                className="project-feature__site-link"
+                href={projectSiteLinks.privatevpn}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visit Site
+              </a>
             </div>
           </article>
 
@@ -750,6 +800,14 @@ export default function Home() {
 
             <div className="project-feature__visuals project-feature__visuals--onsecurity">
               <ProjectCarousel slides={onsecuritySlides} />
+              <a
+                className="project-feature__site-link"
+                href={projectSiteLinks.onsecurity}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visit Site
+              </a>
             </div>
           </article>
 
@@ -808,6 +866,14 @@ export default function Home() {
 
             <div className="project-feature__visuals project-feature__visuals--runway">
               <ProjectCarousel slides={runwaySlides} />
+              <a
+                className="project-feature__site-link"
+                href={projectSiteLinks.runway}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visit Site
+              </a>
             </div>
           </article>
 

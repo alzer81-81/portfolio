@@ -3518,7 +3518,7 @@ img {
   }
 
   .homepage-projects__heading {
-    margin-bottom: -2px;
+    display: none;
   }
 
   .homepage-disciplines__grid {

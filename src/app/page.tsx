@@ -185,7 +185,7 @@ const projectSiteLinks = {
   qstream: "https://www.qstream.com",
   privatevpn: "https://www.privatevpn.com",
   onsecurity: "https://www.onsecurity.io",
-  runway: "https://www.runway.com",
+  runway: "https://www.runway.team",
 } as const;
 
 const disciplines = [

@@ -143,6 +143,21 @@ body {
   flex-direction: column;
 }
 
+.smooth-scroll-shell {
+  position: relative;
+  width: 100%;
+}
+
+.smooth-scroll-shell.is-enabled {
+  min-height: 100vh;
+}
+
+.smooth-scroll-shell.is-enabled .smooth-scroll-shell__content {
+  position: fixed;
+  inset: 0 0 auto;
+  width: 100%;
+}
+
 .pointer-trail {
   position: fixed;
   inset: 0;

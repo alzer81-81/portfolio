@@ -203,7 +203,7 @@ export function PointerTrail() {
       const squareSize = squareSizeRef.current;
       const strokeInset = Math.max(1, squareSize * 0.08);
       const strokeSize = Math.max(0, squareSize - strokeInset * 2);
-      const strokeWidth = Math.max(1.25, squareSize * 0.045);
+      const strokeWidth = Math.max(0.8, squareSize * 0.024);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       blocksRef.current.forEach((block) => {

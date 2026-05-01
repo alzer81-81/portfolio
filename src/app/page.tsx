@@ -463,6 +463,14 @@ export default function Home() {
                     <li>Webflow Development</li>
                   </ul>
                 </div>
+                <a
+                  className="project-feature__site-link"
+                  href={projectSiteLinks.typing}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
               </div>
 
               <div className="project-feature__story">
@@ -489,14 +497,6 @@ export default function Home() {
 
             <div className="project-feature__visuals project-feature__visuals--typing">
               <ProjectCarousel slides={typingSlides} />
-              <a
-                className="project-feature__site-link"
-                href={projectSiteLinks.typing}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Visit Site
-              </a>
             </div>
           </article>
 
@@ -522,6 +522,14 @@ export default function Home() {
                     <li>Webflow Development</li>
                   </ul>
                 </div>
+                <a
+                  className="project-feature__site-link"
+                  href={projectSiteLinks.shortcut}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
               </div>
 
               <div className="project-feature__story project-feature__story--shortcut">
@@ -553,14 +561,6 @@ export default function Home() {
 
             <div className="project-feature__visuals project-feature__visuals--shortcut">
               <ProjectCarousel slides={shortcutSlides} />
-              <a
-                className="project-feature__site-link"
-                href={projectSiteLinks.shortcut}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Visit Site
-              </a>
             </div>
           </article>
 
@@ -585,6 +585,14 @@ export default function Home() {
                     <li>Illustration</li>
                   </ul>
                 </div>
+                <a
+                  className="project-feature__site-link"
+                  href={projectSiteLinks.ryanair}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
               </div>
 
               <div className="project-feature__story project-feature__story--ryanair">
@@ -611,14 +619,6 @@ export default function Home() {
 
             <div className="project-feature__visuals project-feature__visuals--ryanair">
               <ProjectCarousel slides={ryanairSlides} />
-              <a
-                className="project-feature__site-link"
-                href={projectSiteLinks.ryanair}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Visit Site
-              </a>
             </div>
           </article>
 
@@ -644,6 +644,14 @@ export default function Home() {
                     <li>Marketing Website</li>
                   </ul>
                 </div>
+                <a
+                  className="project-feature__site-link"
+                  href={projectSiteLinks.qstream}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
               </div>
 
               <div className="project-feature__story project-feature__story--qstream">
@@ -676,14 +684,6 @@ export default function Home() {
 
             <div className="project-feature__visuals project-feature__visuals--qstream">
               <ProjectCarousel slides={qstreamSlides} />
-              <a
-                className="project-feature__site-link"
-                href={projectSiteLinks.qstream}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Visit Site
-              </a>
             </div>
           </article>
 
@@ -711,6 +711,14 @@ export default function Home() {
                     <li>Illustration</li>
                   </ul>
                 </div>
+                <a
+                  className="project-feature__site-link"
+                  href={projectSiteLinks.privatevpn}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
               </div>
 
               <div className="project-feature__story project-feature__story--privatevpn">
@@ -741,14 +749,6 @@ export default function Home() {
 
             <div className="project-feature__visuals project-feature__visuals--privatevpn">
               <ProjectCarousel slides={privatevpnSlides} />
-              <a
-                className="project-feature__site-link"
-                href={projectSiteLinks.privatevpn}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Visit Site
-              </a>
             </div>
           </article>
 
@@ -776,6 +776,14 @@ export default function Home() {
                     <li>Illustration</li>
                   </ul>
                 </div>
+                <a
+                  className="project-feature__site-link"
+                  href={projectSiteLinks.onsecurity}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
               </div>
 
               <div className="project-feature__story project-feature__story--onsecurity">
@@ -800,14 +808,6 @@ export default function Home() {
 
             <div className="project-feature__visuals project-feature__visuals--onsecurity">
               <ProjectCarousel slides={onsecuritySlides} />
-              <a
-                className="project-feature__site-link"
-                href={projectSiteLinks.onsecurity}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Visit Site
-              </a>
             </div>
           </article>
 
@@ -835,6 +835,14 @@ export default function Home() {
                     <li>Marketing Collateral</li>
                   </ul>
                 </div>
+                <a
+                  className="project-feature__site-link"
+                  href={projectSiteLinks.runway}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
               </div>
 
               <div className="project-feature__story project-feature__story--runway">
@@ -866,14 +874,6 @@ export default function Home() {
 
             <div className="project-feature__visuals project-feature__visuals--runway">
               <ProjectCarousel slides={runwaySlides} />
-              <a
-                className="project-feature__site-link"
-                href={projectSiteLinks.runway}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Visit Site
-              </a>
             </div>
           </article>
 

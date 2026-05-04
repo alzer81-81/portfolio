@@ -158,14 +158,6 @@ body {
   width: 100%;
 }
 
-.smooth-scroll-shell.is-enabled .homepage-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-}
-
 .pointer-trail {
   position: fixed;
   inset: 0;
@@ -677,8 +669,10 @@ img {
 }
 
 .homepage-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 20;
   display: flex;
   justify-content: center;
@@ -3182,7 +3176,13 @@ img {
   }
 
   .homepage-hero__visual {
-    display: none;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 16px;
+  }
+
+  .homepage-hero__logo3d {
+    width: min(78vw, 320px);
   }
 }
 
@@ -3527,6 +3527,10 @@ img {
   .homepage-disciplines {
     padding-top: 8px;
     padding-bottom: 80px;
+  }
+
+  .homepage-hero__visual {
+    display: none;
   }
 
   .homepage-about-preview {

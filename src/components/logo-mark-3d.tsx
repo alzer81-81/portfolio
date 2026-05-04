@@ -10,6 +10,7 @@ const EXTRUDE_DEPTH = 0.18;
 
 export function LogoMark3D() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const rootRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -106,7 +107,9 @@ export function LogoMark3D() {
 
     const buildLogo = async () => {
       const loader = new SVGLoader();
-      const data = await loader.loadAsync(LOGO_URL);
+      const response = await fetch(LOGO_URL);
+      const svgText = await response.text();
+      const data = loader.parse(svgText);
       const group = new THREE.Group();
 
       data.paths.forEach((path: { userData?: { style?: { fill?: string } } }) => {
@@ -140,6 +143,7 @@ export function LogoMark3D() {
 
       root.add(group);
       logoGroup = group;
+      rootRef.current?.setAttribute("data-ready", "true");
       resize();
       animate();
     };
@@ -153,6 +157,7 @@ export function LogoMark3D() {
 
     return () => {
       disposed = true;
+      rootRef.current?.removeAttribute("data-ready");
       window.removeEventListener("resize", resize);
       window.cancelAnimationFrame(animationFrame);
       controls.dispose();
@@ -170,7 +175,13 @@ export function LogoMark3D() {
   }, []);
 
   return (
-    <div className="homepage-hero__logo3d" aria-hidden="true">
+    <div ref={rootRef} className="homepage-hero__logo3d" aria-hidden="true">
+      <img
+        src="/logo.svg"
+        alt=""
+        className="homepage-hero__logo3d-fallback"
+        draggable="false"
+      />
       <canvas ref={canvasRef} className="homepage-hero__logo3d-canvas" />
     </div>
   );

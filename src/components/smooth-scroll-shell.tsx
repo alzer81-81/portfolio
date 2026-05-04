@@ -44,9 +44,6 @@ export function SmoothScrollShell({
 
   useLayoutEffect(() => {
     const content = contentRef.current;
-    const navs = Array.from(
-      document.querySelectorAll<HTMLElement>(".homepage-nav"),
-    );
 
     if (!content) {
       return;
@@ -63,10 +60,6 @@ export function SmoothScrollShell({
     if (!enabled) {
       content.style.transform = "";
       content.style.willChange = "";
-      navs.forEach((nav) => {
-        nav.style.transform = "";
-        nav.style.willChange = "";
-      });
       currentRef.current = window.scrollY;
       targetRef.current = window.scrollY;
       return () => {
@@ -75,15 +68,9 @@ export function SmoothScrollShell({
     }
 
     content.style.willChange = "transform";
-    navs.forEach((nav) => {
-      nav.style.willChange = "transform";
-    });
     currentRef.current = window.scrollY;
     targetRef.current = window.scrollY;
     content.style.transform = `translate3d(0, ${-currentRef.current}px, 0)`;
-    navs.forEach((nav) => {
-      nav.style.transform = `translate3d(0, ${currentRef.current}px, 0)`;
-    });
 
     const onScroll = () => {
       targetRef.current = window.scrollY;
@@ -98,9 +85,6 @@ export function SmoothScrollShell({
       }
 
       content.style.transform = `translate3d(0, ${-currentRef.current}px, 0)`;
-      navs.forEach((nav) => {
-        nav.style.transform = `translate3d(0, ${currentRef.current}px, 0)`;
-      });
       frameRef.current = window.requestAnimationFrame(tick);
     };
 
@@ -122,10 +106,6 @@ export function SmoothScrollShell({
       frameRef.current = null;
       content.style.transform = "";
       content.style.willChange = "";
-      navs.forEach((nav) => {
-        nav.style.transform = "";
-        nav.style.willChange = "";
-      });
       document.body.style.height = "";
     };
   }, [enabled, pathname]);

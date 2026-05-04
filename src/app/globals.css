@@ -933,15 +933,33 @@ img {
 }
 
 .homepage-hero__logo3d {
+  position: relative;
   width: clamp(350px, 29vw, 400px);
   aspect-ratio: 1;
   background: transparent;
 }
 
+.homepage-hero__logo3d-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 220ms ease;
+}
+
 .homepage-hero__logo3d-canvas {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
+  z-index: 1;
+}
+
+.homepage-hero__logo3d[data-ready="true"] .homepage-hero__logo3d-fallback {
+  opacity: 0;
 }
 
 .homepage-hero__copy h1,

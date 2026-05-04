@@ -103,62 +103,70 @@ export function HomepageNav({ workHref = "/#selected-work" }: { workHref?: strin
     };
   }, []);
 
+  const renderNavLinks = (idSuffix: string) => (
+    <>
+      <Link
+        href="/"
+        className="homepage-nav__logo"
+        aria-label="Back to homepage"
+        onClick={() => setMenuOpen(false)}
+      >
+        <LogoMark className="homepage-nav__logo-mark" />
+      </Link>
+
+      <button
+        type="button"
+        className="homepage-nav__toggle"
+        aria-expanded={menuOpen}
+        aria-controls={`homepage-nav-links-${idSuffix}`}
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
+        onClick={() => setMenuOpen((current) => !current)}
+      >
+        {menuOpen ? "Close" : "Menu"}
+      </button>
+
+      <nav
+        id={`homepage-nav-links-${idSuffix}`}
+        className={`homepage-nav__links ${menuOpen ? "is-open" : ""}`}
+        aria-label="Primary"
+      >
+        {navItems.map((item, index) => {
+          const href = item.label === "Work" ? workHref : item.href;
+          const isCurrent =
+            (item.label === "Work" && pathname === "/") ||
+            (item.label !== "Work" && pathname === item.href);
+
+          return (
+            <span key={item.label} className="homepage-nav__item">
+              <Link
+                href={href}
+                aria-current={isCurrent ? "page" : undefined}
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+              {index < navItems.length - 1 ? (
+                <span className="homepage-nav__separator" aria-hidden="true">
+                  ·
+                </span>
+              ) : null}
+            </span>
+          );
+        })}
+      </nav>
+    </>
+  );
+
   return (
-    <header
-      ref={navRef}
-      className={`homepage-nav ${scrolled ? "is-scrolled" : ""} is-tone-${tone}`}
-    >
-      <div className="homepage-nav__shell">
-        <Link
-          href="/"
-          className="homepage-nav__logo"
-          aria-label="Back to homepage"
-          onClick={() => setMenuOpen(false)}
-        >
-          <LogoMark className="homepage-nav__logo-mark" />
-        </Link>
-
-        <button
-          type="button"
-          className="homepage-nav__toggle"
-          aria-expanded={menuOpen}
-          aria-controls="homepage-nav-links"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          onClick={() => setMenuOpen((current) => !current)}
-        >
-          {menuOpen ? "Close" : "Menu"}
-        </button>
-
-        <nav
-          id="homepage-nav-links"
-          className={`homepage-nav__links ${menuOpen ? "is-open" : ""}`}
-          aria-label="Primary"
-        >
-          {navItems.map((item, index) => {
-            const href = item.label === "Work" ? workHref : item.href;
-            const isCurrent =
-              (item.label === "Work" && pathname === "/") ||
-              (item.label !== "Work" && pathname === item.href);
-
-            return (
-              <span key={item.label} className="homepage-nav__item">
-                <Link
-                  href={href}
-                  aria-current={isCurrent ? "page" : undefined}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-                {index < navItems.length - 1 ? (
-                  <span className="homepage-nav__separator" aria-hidden="true">
-                    ·
-                  </span>
-                ) : null}
-              </span>
-            );
-          })}
-        </nav>
-      </div>
-    </header>
+    <>
+      <header ref={navRef} className={`homepage-nav is-tone-${tone}`}>
+        <div className="homepage-nav__shell">{renderNavLinks("base")}</div>
+      </header>
+      {scrolled ? (
+        <div className={`homepage-nav homepage-nav--floating is-scrolled is-tone-${tone}`}>
+          <div className="homepage-nav__shell">{renderNavLinks("floating")}</div>
+        </div>
+      ) : null}
+    </>
   );
 }

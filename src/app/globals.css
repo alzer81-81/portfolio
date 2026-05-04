@@ -669,11 +669,8 @@ img {
 }
 
 .homepage-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 20;
+  position: relative;
+  z-index: 6;
   display: flex;
   justify-content: center;
   padding: 18px 24px 0;
@@ -681,6 +678,14 @@ img {
   transition:
     color 0.2s ease,
     padding 0.28s ease;
+}
+
+.homepage-nav--floating {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
 }
 
 .homepage-nav__shell {
@@ -915,7 +920,8 @@ img {
 
 .homepage-hero__copy {
   position: relative;
-  max-width: 960px;
+  max-width: 860px;
+  min-width: 0;
 }
 
 .homepage-hero__layout {
@@ -977,7 +983,7 @@ img {
   line-height: 0.92;
   letter-spacing: -0.06em;
   font-weight: 900;
-  max-width: 1240px;
+  max-width: 860px;
   color: var(--text-primary);
 }
 
@@ -3009,6 +3015,10 @@ img {
     padding: 12px 20px 0;
   }
 
+  .homepage-nav--floating {
+    padding: 12px 20px 0;
+  }
+
   .homepage-hero {
     padding: 120px 20px 100px;
   }
@@ -3219,6 +3229,10 @@ img {
   }
 
   .homepage-nav {
+    padding: 12px 16px 0;
+  }
+
+  .homepage-nav--floating {
     padding: 12px 16px 0;
   }
 

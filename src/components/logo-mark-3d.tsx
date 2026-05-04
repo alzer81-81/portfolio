@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import * as THREE from "@/vendor/three/build/three.module.js";
-import { OrbitControls } from "@/vendor/three/examples/jsm/controls/OrbitControls.js";
-import { SVGLoader } from "@/vendor/three/examples/jsm/loaders/SVGLoader.js";
+import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js";
 
 const LOGO_URL = "/logo.svg";
 const EXTRUDE_DEPTH = 0.18;

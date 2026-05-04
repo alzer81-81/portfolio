@@ -4,13 +4,10 @@ import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const TRANSITION_MS = 560;
-const INTRO_MS = 1050;
 type TransitionPhase =
   | "idle"
   | "exiting"
-  | "covered"
-  | "intro-cover"
-  | "intro-reveal";
+  | "covered";
 
 export function PageTransitionShell({
   children,
@@ -21,9 +18,7 @@ export function PageTransitionShell({
   const router = useRouter();
   const [phase, setPhase] = useState<TransitionPhase>("idle");
   const [transitionEnabled, setTransitionEnabled] = useState(true);
-  const [introActive, setIntroActive] = useState(true);
   const timeoutRef = useRef<number | null>(null);
-  const introTimeoutRef = useRef<number | null>(null);
   const navigatingRef = useRef(false);
   const pendingHashRef = useRef<string>("");
 
@@ -59,26 +54,6 @@ export function PageTransitionShell({
         window.history.scrollRestoration = previous;
       };
     }
-  }, []);
-
-  useEffect(() => {
-    setPhase("intro-cover");
-
-    const revealId = window.setTimeout(() => {
-      setPhase("intro-reveal");
-    }, 60);
-
-    introTimeoutRef.current = window.setTimeout(() => {
-      setPhase("idle");
-      setIntroActive(false);
-    }, INTRO_MS);
-
-    return () => {
-      window.clearTimeout(revealId);
-      if (introTimeoutRef.current) {
-        window.clearTimeout(introTimeoutRef.current);
-      }
-    };
   }, []);
 
   useLayoutEffect(() => {
@@ -125,10 +100,8 @@ export function PageTransitionShell({
 
     requestAnimationFrame(() => {
       html.style.scrollBehavior = "";
-      if (!introActive) {
-        html.style.overflow = "";
-        body.style.overflow = "";
-      }
+      html.style.overflow = "";
+      body.style.overflow = "";
     });
 
     return () => {
@@ -136,7 +109,7 @@ export function PageTransitionShell({
       html.style.overflow = "";
       body.style.overflow = "";
     };
-  }, [introActive, pathname, resetScrollToTop, scrollToHashTarget]);
+  }, [pathname, resetScrollToTop, scrollToHashTarget]);
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -205,7 +178,7 @@ export function PageTransitionShell({
     <div className="page-transition-shell">
       {children}
       <div
-        className={`page-transition-overlay is-${phase} ${transitionEnabled ? "" : "is-no-transition"} ${introActive ? "is-intro-active" : ""}`}
+        className={`page-transition-overlay is-${phase} ${transitionEnabled ? "" : "is-no-transition"}`}
         aria-hidden="true"
       />
     </div>

@@ -198,26 +198,6 @@ body {
   filter: blur(0.5px);
 }
 
-.page-transition-overlay.is-intro-active {
-  width: 100vw;
-  left: 0;
-  background: #000000;
-  transform: translate3d(0, 0, 0);
-  transition: transform 1180ms cubic-bezier(.76,0,.24,1);
-}
-
-.page-transition-overlay.is-intro-active::after {
-  top: auto;
-  left: -12vw;
-  right: auto;
-  bottom: -14vh;
-  width: 124vw;
-  height: 30vh;
-  transform: none;
-  filter: blur(1px);
-  border-radius: 0 0 48% 52% / 0 0 100% 100%;
-}
-
 .page-transition-overlay.is-no-transition {
   transition: none;
 }
@@ -232,14 +212,6 @@ body {
 
 .page-transition-overlay.is-covered {
   transform: translate3d(0, 0, 0);
-}
-
-.page-transition-overlay.is-intro-cover {
-  transform: translate3d(0, 0, 0);
-}
-
-.page-transition-overlay.is-intro-reveal {
-  transform: translate3d(0, -112%, 0);
 }
 
 button {

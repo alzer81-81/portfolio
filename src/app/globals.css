@@ -2994,11 +2994,12 @@ img {
   }
 
   .homepage-hero__layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
+    gap: 28px;
   }
 
-  .homepage-hero__visual {
-    display: none;
+  .homepage-hero__logo3d {
+    width: clamp(280px, 30vw, 340px);
   }
 
   .page-hero-mark {
@@ -3172,6 +3173,16 @@ img {
   .project-carousel__slide {
     width: calc(100vw - 40px);
     min-height: 420px;
+  }
+}
+
+@media (max-width: 900px) {
+  .homepage-hero__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .homepage-hero__visual {
+    display: none;
   }
 }
 

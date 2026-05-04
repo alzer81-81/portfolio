@@ -176,12 +176,6 @@ export function LogoMark3D() {
 
   return (
     <div ref={rootRef} className="homepage-hero__logo3d" aria-hidden="true">
-      <img
-        src="/logo.svg"
-        alt=""
-        className="homepage-hero__logo3d-fallback"
-        draggable="false"
-      />
       <canvas ref={canvasRef} className="homepage-hero__logo3d-canvas" />
     </div>
   );

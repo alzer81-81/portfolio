@@ -3,7 +3,6 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { PageTransitionShell } from "@/components/page-transition-shell";
 import { PointerTrail } from "@/components/pointer-trail";
-import { SmoothScrollShell } from "@/components/smooth-scroll-shell";
 import { StandardFooter } from "@/components/standard-footer";
 import { GoogleAnalyticsPageview } from "@/components/google-analytics";
 import { personJsonLd, siteConfig, websiteJsonLd } from "@/lib/seo";
@@ -88,10 +87,8 @@ export default function RootLayout({
         </Suspense>
         <PointerTrail />
         <PageTransitionShell>
-          <SmoothScrollShell>
-            {children}
-            <StandardFooter />
-          </SmoothScrollShell>
+          {children}
+          <StandardFooter />
         </PageTransitionShell>
       </body>
     </html>

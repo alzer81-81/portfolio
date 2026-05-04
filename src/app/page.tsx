@@ -381,7 +381,15 @@ export default function Home() {
                 </p>
               </div>
               <div className="homepage-hero__visual">
-                <LogoMark3D />
+                <div className="homepage-hero__logo3d-shell" aria-hidden="true">
+                  <img
+                    src="/logo.svg"
+                    alt=""
+                    className="homepage-hero__logo3d-fallback"
+                    draggable="false"
+                  />
+                  <LogoMark3D />
+                </div>
               </div>
             </div>
           </section>

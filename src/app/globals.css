@@ -932,10 +932,18 @@ img {
   padding-top: 12px;
 }
 
-.homepage-hero__logo3d {
+.homepage-hero__logo3d-shell {
   position: relative;
   width: clamp(350px, 29vw, 400px);
   aspect-ratio: 1;
+  background: transparent;
+}
+
+.homepage-hero__logo3d {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   background: transparent;
 }
 
@@ -3010,7 +3018,7 @@ img {
     gap: 28px;
   }
 
-  .homepage-hero__logo3d {
+  .homepage-hero__logo3d-shell {
     width: clamp(280px, 30vw, 340px);
   }
 
@@ -3199,7 +3207,7 @@ img {
     margin-top: 16px;
   }
 
-  .homepage-hero__logo3d {
+  .homepage-hero__logo3d-shell {
     width: min(78vw, 320px);
   }
 }

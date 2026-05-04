@@ -9,6 +9,7 @@ type Slide = {
 };
 
 export function ProjectCarousel({ slides }: { slides: Slide[] }) {
+  const carouselRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const progressTrackRef = useRef<HTMLDivElement | null>(null);
   const cursorRef = useRef<HTMLDivElement | null>(null);
@@ -154,10 +155,12 @@ export function ProjectCarousel({ slides }: { slides: Slide[] }) {
 
   const updateCursorPosition = (clientX: number, clientY: number) => {
     if (!allowCursorRef.current) return;
+    const carousel = carouselRef.current;
     const cursor = cursorRef.current;
-    if (!cursor) return;
+    if (!cursor || !carousel) return;
+    const rect = carousel.getBoundingClientRect();
     pointerPosition.current = { x: clientX, y: clientY };
-    cursor.style.transform = `translate(${clientX}px, ${clientY}px)`;
+    cursor.style.transform = `translate(${clientX - rect.left}px, ${clientY - rect.top}px)`;
   };
 
   const syncCursorToneFromNav = () => {
@@ -214,6 +217,7 @@ export function ProjectCarousel({ slides }: { slides: Slide[] }) {
 
   return (
     <div
+      ref={carouselRef}
       className={`project-carousel ${cursorActive ? "is-cursor-active" : ""} ${dragging ? "is-dragging" : ""}`}
     >
       <div

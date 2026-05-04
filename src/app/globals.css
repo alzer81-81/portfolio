@@ -913,7 +913,33 @@ img {
 
 .homepage-hero__copy {
   position: relative;
-  max-width: 1240px;
+  max-width: 960px;
+}
+
+.homepage-hero__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+
+.homepage-hero__visual {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-top: 12px;
+}
+
+.homepage-hero__logo3d {
+  width: clamp(350px, 29vw, 400px);
+  aspect-ratio: 1;
+  background: transparent;
+}
+
+.homepage-hero__logo3d-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .homepage-hero__copy h1,
@@ -2957,6 +2983,14 @@ img {
 
   .homepage-hero {
     padding: 120px 20px 100px;
+  }
+
+  .homepage-hero__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .homepage-hero__visual {
+    display: none;
   }
 
   .page-hero-mark {

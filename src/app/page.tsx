@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { HomepageNav } from "@/components/homepage-nav";
+import { LogoMark3D } from "@/components/logo-mark-3d";
 import { HomepageToneController } from "@/components/homepage-tone-controller";
 import { ProjectCarousel } from "@/components/project-carousel";
 import { absoluteUrl, createPageMetadata, siteConfig } from "@/lib/seo";
@@ -330,53 +331,58 @@ export default function Home() {
 
         <section className="homepage-intro">
           <section className="homepage-hero" data-page-tone="hero">
-            <div className="homepage-hero__copy">
-              <h1 className="homepage-hero__title">
-                <span className="homepage-hero__title-line">
-                  Shaping Products,
-                </span>
-                <span className="homepage-hero__title-line homepage-hero__title-line--with-accent">
-                  <span>Brands &amp; Systems</span>
-                  <span className="homepage-hero__accent">
-                    <a
-                      className="homepage-hero__avatar-link"
-                      href="https://www.linkedin.com/in/alpower81"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="Powered by Al. Visit Al Power on LinkedIn."
-                    >
-                      <span className="homepage-hero__avatar-chip">
-                        Powered by Al <span aria-hidden="true">↗</span>
-                      </span>
-                      <span className="homepage-hero__avatar">
-                        <Image
-                          className="homepage-hero__avatar-image homepage-hero__avatar-image--still"
-                          src="/avatar1.png"
-                          alt=""
-                          width={100}
-                          height={104}
-                          priority
-                        />
-                        <Image
-                          className="homepage-hero__avatar-image homepage-hero__avatar-image--hover"
-                          src="/avatar1.gif"
-                          alt=""
-                          width={100}
-                          height={104}
-                          unoptimized
-                          priority
-                        />
-                      </span>
-                    </a>
+            <div className="homepage-hero__layout">
+              <div className="homepage-hero__copy">
+                <h1 className="homepage-hero__title">
+                  <span className="homepage-hero__title-line">
+                    Shaping Products,
                   </span>
-                </span>
-              </h1>
-              <p>
-                I&apos;m Al Power, an Irish-based multidisciplinary designer
-                shaping products, brands, and digital systems. My work focuses
-                on clarity, craft, and solving real problems through considered
-                design.
-              </p>
+                  <span className="homepage-hero__title-line homepage-hero__title-line--with-accent">
+                    <span>Brands &amp; Systems</span>
+                    <span className="homepage-hero__accent">
+                      <a
+                        className="homepage-hero__avatar-link"
+                        href="https://www.linkedin.com/in/alpower81"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="Powered by Al. Visit Al Power on LinkedIn."
+                      >
+                        <span className="homepage-hero__avatar-chip">
+                          Powered by Al <span aria-hidden="true">↗</span>
+                        </span>
+                        <span className="homepage-hero__avatar">
+                          <Image
+                            className="homepage-hero__avatar-image homepage-hero__avatar-image--still"
+                            src="/avatar1.png"
+                            alt=""
+                            width={100}
+                            height={104}
+                            priority
+                          />
+                          <Image
+                            className="homepage-hero__avatar-image homepage-hero__avatar-image--hover"
+                            src="/avatar1.gif"
+                            alt=""
+                            width={100}
+                            height={104}
+                            unoptimized
+                            priority
+                          />
+                        </span>
+                      </a>
+                    </span>
+                  </span>
+                </h1>
+                <p>
+                  I&apos;m Al Power, an Irish-based multidisciplinary designer
+                  shaping products, brands, and digital systems. My work focuses
+                  on clarity, craft, and solving real problems through considered
+                  design.
+                </p>
+              </div>
+              <div className="homepage-hero__visual">
+                <LogoMark3D />
+              </div>
             </div>
           </section>
 

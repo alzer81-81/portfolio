@@ -379,19 +379,6 @@ export default function Home() {
                   design.
                 </p>
               </div>
-              <div className="homepage-hero__visual">
-                <div className="homepage-hero__logo-shell" aria-hidden="true">
-                  <Image
-                    src="/logo.svg"
-                    alt=""
-                    className="homepage-hero__logo-static"
-                    draggable="false"
-                    width={400}
-                    height={400}
-                    priority
-                  />
-                </div>
-              </div>
             </div>
           </section>
 

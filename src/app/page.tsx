@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { HomepageNav } from "@/components/homepage-nav";
-import { LogoMark3D } from "@/components/logo-mark-3d";
 import { HomepageToneController } from "@/components/homepage-tone-controller";
 import { ProjectCarousel } from "@/components/project-carousel";
 import { absoluteUrl, createPageMetadata, siteConfig } from "@/lib/seo";
@@ -381,14 +380,16 @@ export default function Home() {
                 </p>
               </div>
               <div className="homepage-hero__visual">
-                <div className="homepage-hero__logo3d-shell" aria-hidden="true">
-                  <img
+                <div className="homepage-hero__logo-shell" aria-hidden="true">
+                  <Image
                     src="/logo.svg"
                     alt=""
-                    className="homepage-hero__logo3d-fallback"
+                    className="homepage-hero__logo-static"
                     draggable="false"
+                    width={400}
+                    height={400}
+                    priority
                   />
-                  <LogoMark3D />
                 </div>
               </div>
             </div>

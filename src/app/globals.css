@@ -3412,7 +3412,7 @@ img {
 
   .my-story-timeline__item {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 12px;
     padding-top: 56px;
   }
 
@@ -3426,6 +3426,7 @@ img {
   }
 
   .my-story-timeline__left {
+    padding-left: 40px;
     padding-right: 0;
     text-align: left;
   }
@@ -3434,6 +3435,7 @@ img {
     position: static;
     transform: none;
     font-size: 18px;
+    line-height: 1.08;
   }
 
   .my-story-timeline__centre {
@@ -3442,6 +3444,11 @@ img {
 
   .my-story-timeline__right {
     padding-left: 40px;
+  }
+
+  .my-story-timeline__entry-copy {
+    gap: 8px;
+    margin-bottom: 24px;
   }
 
   .my-story-timeline__entry-title {

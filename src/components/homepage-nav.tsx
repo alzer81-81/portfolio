@@ -12,34 +12,15 @@ const navItems = [
   { href: "/contact", label: "Contact" },
 ];
 
-const accentThemes = [
-  "black",
-  "blue",
-  "orange",
-  "lime",
-  "powder",
-] as const;
-
-type AccentTheme = (typeof accentThemes)[number];
-
 const toneSurfaceMap: Record<string, { bg: string; fg: string }> = {
-  hero: {
-    bg: "rgba(var(--theme-surface-rgb, 255, 255, 255), 0.96)",
-    fg: "rgb(var(--theme-ink-rgb, 17, 17, 17))",
-  },
+  hero: { bg: "rgba(255, 255, 255, 0.96)", fg: "#111111" },
   typing: { bg: "rgba(16, 103, 170, 0.94)", fg: "#ffffff" },
   shortcut: { bg: "rgba(36, 44, 63, 0.94)", fg: "#ffffff" },
   ryanair: { bg: "rgba(23, 68, 146, 0.94)", fg: "#ffffff" },
-  qstream: {
-    bg: "rgba(var(--theme-surface-rgb, 255, 255, 255), 0.96)",
-    fg: "rgb(var(--theme-ink-rgb, 17, 17, 17))",
-  },
+  qstream: { bg: "rgba(255, 255, 255, 0.96)", fg: "#111111" },
   privatevpn: { bg: "rgba(38, 56, 96, 0.94)", fg: "#ffffff" },
   onsecurity: { bg: "rgba(13, 25, 39, 0.94)", fg: "#ffffff" },
-  runway: {
-    bg: "rgba(var(--theme-surface-rgb, 255, 255, 255), 0.96)",
-    fg: "rgb(var(--theme-ink-rgb, 17, 17, 17))",
-  },
+  runway: { bg: "rgba(255, 255, 255, 0.96)", fg: "#111111" },
 };
 
 export function HomepageNav({ workHref = "/#selected-work" }: { workHref?: string }) {
@@ -47,7 +28,6 @@ export function HomepageNav({ workHref = "/#selected-work" }: { workHref?: strin
   const [tone, setTone] = useState("hero");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [accentTheme, setAccentTheme] = useState<AccentTheme>("black");
   const navRef = useRef<HTMLElement | null>(null);
   const toneRef = useRef("hero");
   const scrolledRef = useRef(false);
@@ -110,22 +90,6 @@ export function HomepageNav({ workHref = "/#selected-work" }: { workHref?: strin
   }, [pathname]);
 
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem("alpower-accent-theme") as
-      | AccentTheme
-      | null;
-    const nextTheme =
-      savedTheme && accentThemes.includes(savedTheme) ? savedTheme : "black";
-
-    setAccentTheme(nextTheme);
-    document.documentElement.setAttribute("data-accent-theme", nextTheme);
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-accent-theme", accentTheme);
-    window.localStorage.setItem("alpower-accent-theme", accentTheme);
-  }, [accentTheme]);
-
-  useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 720) {
         setMenuOpen(false);
@@ -138,14 +102,6 @@ export function HomepageNav({ workHref = "/#selected-work" }: { workHref?: strin
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  const handleAccentCycle = () => {
-    setAccentTheme((current) => {
-      const currentIndex = accentThemes.indexOf(current);
-      const nextIndex = (currentIndex + 1) % accentThemes.length;
-      return accentThemes[nextIndex];
-    });
-  };
 
   return (
     <header
@@ -202,13 +158,6 @@ export function HomepageNav({ workHref = "/#selected-work" }: { workHref?: strin
             );
           })}
         </nav>
-
-        <button
-          type="button"
-          className="homepage-nav__theme-dot"
-          onClick={handleAccentCycle}
-          aria-label="Change accent color"
-        />
       </div>
     </header>
   );

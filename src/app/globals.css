@@ -1285,8 +1285,12 @@ img {
 
 .homepage-about-preview__logo {
   width: clamp(72px, 5vw, 100px);
-  height: auto;
-  display: block;
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  color: #111111;
 }
 
 .homepage-about-preview__content {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { HomepageNav } from "@/components/homepage-nav";
+import { LogoMark } from "@/components/logo-mark";
 import { HomepageToneController } from "@/components/homepage-tone-controller";
 import { ProjectCarousel } from "@/components/project-carousel";
 import { absoluteUrl, createPageMetadata, siteConfig } from "@/lib/seo";
@@ -403,14 +404,7 @@ export default function Home() {
             <div className="homepage-about-preview__divider" aria-hidden="true" />
             <div className="homepage-about-preview__inner">
               <div className="homepage-about-preview__copy">
-                <Image
-                  className="homepage-about-preview__logo"
-                  src="/logo.svg"
-                  alt=""
-                  aria-hidden="true"
-                  width={100}
-                  height={100}
-                />
+                <LogoMark className="homepage-about-preview__logo" />
                 <div className="homepage-about-preview__content">
                   <h2 id="homepage-about-preview-title">
                     Bringing structure and clarity to products that need to make

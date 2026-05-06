@@ -3462,9 +3462,15 @@ img {
     padding: 64px 16px 72px;
   }
 
+  .homepage-hero__copy,
+  .homepage-hero__title {
+    max-width: 100%;
+  }
+
   .homepage-hero__copy h1 {
-    font-size: clamp(3rem, 16vw, 4.4rem);
+    font-size: clamp(2.6rem, 13.8vw, 4rem);
     line-height: 0.92;
+    max-width: 100%;
   }
 
   .homepage-projects__heading h2 {
@@ -3589,6 +3595,7 @@ img {
 
   .homepage-hero__title-line--with-accent {
     display: block;
+    white-space: normal;
   }
 
   .homepage-hero__accent {

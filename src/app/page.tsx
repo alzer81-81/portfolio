@@ -460,7 +460,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <a
-                  className="project-feature__site-link"
+                  className="project-feature__site-link project-feature__site-link--desktop"
                   href={projectSiteLinks.typing}
                   target="_blank"
                   rel="noreferrer"
@@ -488,6 +488,14 @@ export default function Home() {
                   priority at every level, with content designed to be instantly
                   digestible and easy to act on.
                 </p>
+                <a
+                  className="project-feature__site-link project-feature__site-link--mobile"
+                  href={projectSiteLinks.typing}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
               </div>
             </div>
 
@@ -519,7 +527,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <a
-                  className="project-feature__site-link"
+                  className="project-feature__site-link project-feature__site-link--desktop"
                   href={projectSiteLinks.shortcut}
                   target="_blank"
                   rel="noreferrer"
@@ -552,6 +560,14 @@ export default function Home() {
                   illustration-heavy approach into a darker, slicker brand
                   direction that felt more mature without losing consistency.
                 </p>
+                <a
+                  className="project-feature__site-link project-feature__site-link--mobile"
+                  href={projectSiteLinks.shortcut}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
               </div>
             </div>
 
@@ -582,7 +598,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <a
-                  className="project-feature__site-link"
+                  className="project-feature__site-link project-feature__site-link--desktop"
                   href={projectSiteLinks.ryanair}
                   target="_blank"
                   rel="noreferrer"
@@ -610,6 +626,14 @@ export default function Home() {
                   friendlier tone that reshaped how customers felt about the
                   brand.
                 </p>
+                <a
+                  className="project-feature__site-link project-feature__site-link--mobile"
+                  href={projectSiteLinks.ryanair}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
               </div>
             </div>
 
@@ -641,7 +665,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <a
-                  className="project-feature__site-link"
+                  className="project-feature__site-link project-feature__site-link--desktop"
                   href={projectSiteLinks.qstream}
                   target="_blank"
                   rel="noreferrer"
@@ -675,6 +699,14 @@ export default function Home() {
                   marketing site, creating a more cohesive identity across the
                   product itself and every customer-facing surface.
                 </p>
+                <a
+                  className="project-feature__site-link project-feature__site-link--mobile"
+                  href={projectSiteLinks.qstream}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
               </div>
             </div>
 
@@ -708,7 +740,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <a
-                  className="project-feature__site-link"
+                  className="project-feature__site-link project-feature__site-link--desktop"
                   href={projectSiteLinks.privatevpn}
                   target="_blank"
                   rel="noreferrer"
@@ -740,6 +772,14 @@ export default function Home() {
                   work across the marketing site, in-product moments, and the
                   broader experience without adding noise.
                 </p>
+                <a
+                  className="project-feature__site-link project-feature__site-link--mobile"
+                  href={projectSiteLinks.privatevpn}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
               </div>
             </div>
 
@@ -773,7 +813,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <a
-                  className="project-feature__site-link"
+                  className="project-feature__site-link project-feature__site-link--desktop"
                   href={projectSiteLinks.onsecurity}
                   target="_blank"
                   rel="noreferrer"
@@ -799,6 +839,14 @@ export default function Home() {
                   onboarding flow, then extended the system into a sharper
                   abstract brand direction for product and campaign work.
                 </p>
+                <a
+                  className="project-feature__site-link project-feature__site-link--mobile"
+                  href={projectSiteLinks.onsecurity}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
               </div>
             </div>
 
@@ -832,7 +880,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <a
-                  className="project-feature__site-link"
+                  className="project-feature__site-link project-feature__site-link--desktop"
                   href={projectSiteLinks.runway}
                   target="_blank"
                   rel="noreferrer"
@@ -865,6 +913,14 @@ export default function Home() {
                   presence across every channel while keeping the work focused
                   on clarity and conversion.
                 </p>
+                <a
+                  className="project-feature__site-link project-feature__site-link--mobile"
+                  href={projectSiteLinks.runway}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
               </div>
             </div>
 

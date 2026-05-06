@@ -1626,6 +1626,10 @@ img {
     transform 140ms ease;
 }
 
+.project-feature__site-link--mobile {
+  display: none;
+}
+
 .project-feature__site-link:hover,
 .project-feature__site-link:focus-visible {
   opacity: 0.72;
@@ -3622,6 +3626,15 @@ img {
 
   .project-feature__details {
     display: none;
+  }
+
+  .project-feature__site-link--desktop {
+    display: none;
+  }
+
+  .project-feature__site-link--mobile {
+    display: inline-block;
+    margin-top: 4px;
   }
 
   .project-feature__shortcut-logo {

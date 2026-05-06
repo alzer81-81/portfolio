@@ -860,8 +860,8 @@ img {
 .homepage-nav.is-tone-ryanair .homepage-nav__links.is-open,
 .homepage-nav.is-tone-privatevpn .homepage-nav__links.is-open,
 .homepage-nav.is-tone-onsecurity .homepage-nav__links.is-open {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
+  background: var(--nav-surface, rgba(255, 255, 255, 0.96));
+  backdrop-filter: blur(14px);
 }
 
 .homepage-nav.is-scrolled {
@@ -3200,6 +3200,7 @@ img {
     border-radius: 20px;
     background: var(--nav-surface, rgba(255, 255, 255, 0.96));
     color: var(--nav-foreground, #111111);
+    backdrop-filter: blur(14px);
     box-shadow: 0 18px 38px rgba(0, 0, 0, 0.1);
   }
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { HomepageNav } from "@/components/homepage-nav";
-import { LogoMark, StaticLogoShape } from "@/components/logo-mark";
+import { LogoMark } from "@/components/logo-mark";
 import { HomepageToneController } from "@/components/homepage-tone-controller";
 import { ProjectCarousel } from "@/components/project-carousel";
 import { absoluteUrl, createPageMetadata, siteConfig } from "@/lib/seo";
@@ -422,49 +422,12 @@ export default function Home() {
                 <div className="homepage-about-preview__image-frame">
                   <Image
                     className="homepage-about-preview__image"
-                    src="/assets/home/portrait.png"
-                    alt="Alan Power portrait"
-                    width={679}
-                    height={679}
+                    src="/assets/about/home_me.png"
+                    alt="Alan Power portrait with abstract design system shapes"
+                    width={1445}
+                    height={1701}
                     sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1100px) 46vw, 40vw"
                   />
-                  <div
-                    className="homepage-about-preview__shape-layer"
-                    aria-hidden="true"
-                  >
-                    <StaticLogoShape
-                      variant="square"
-                      className="homepage-about-preview__shape homepage-about-preview__shape--mint-square"
-                    />
-                    <StaticLogoShape
-                      variant="cross"
-                      className="homepage-about-preview__shape homepage-about-preview__shape--mint-cross"
-                    />
-                    <StaticLogoShape
-                      variant="hex"
-                      className="homepage-about-preview__shape homepage-about-preview__shape--mint-hex"
-                    />
-                    <StaticLogoShape
-                      variant="plus"
-                      className="homepage-about-preview__shape homepage-about-preview__shape--ivory-plus"
-                    />
-                    <StaticLogoShape
-                      variant="cross"
-                      className="homepage-about-preview__shape homepage-about-preview__shape--ink-cross-top"
-                    />
-                    <StaticLogoShape
-                      variant="cross"
-                      className="homepage-about-preview__shape homepage-about-preview__shape--ink-cross-mid"
-                    />
-                    <StaticLogoShape
-                      variant="plus"
-                      className="homepage-about-preview__shape homepage-about-preview__shape--ink-plus"
-                    />
-                    <StaticLogoShape
-                      variant="hex"
-                      className="homepage-about-preview__shape homepage-about-preview__shape--ink-hex"
-                    />
-                  </div>
                 </div>
               </div>
             </div>
